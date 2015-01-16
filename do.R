@@ -2,6 +2,8 @@
 #STEP 1:
 #Save the survey data in data foloder as Survey_Responses_return.csv
 
+#Change the Programe Start Date
+date='01/06/2015'
 source('./script/Survey_To_ETO.R')
 
 #STEP 2:

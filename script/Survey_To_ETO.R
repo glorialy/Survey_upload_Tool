@@ -25,7 +25,11 @@ survey_upload<-subset(survey,select=c(1,58:61,2,4,3,6,5,11:13,7:10,50,70,48,
                                       23,44,37,42,41,66:69))
 check1<-cbind(names(survey_upload),names(template))
 #rename the survey
-names(survey_upload)=names(template)
+names<-names(template)
+#delete the dots
+names<-gsub('\\.', ' ', names)
+names(survey_upload)=names
+survey_upload[,58]=rep(date,nrow(survey_upload))
 #write into a .csv file
 write.csv(survey_upload,
           "./output/survey_ETO_return.csv",
